@@ -2,45 +2,10 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Star, ExternalLink } from "lucide-react";
 import PageHeader from "@/components/ui/PageHeader";
 import BookButton from "@/components/ui/BookButton";
+import ReviewCard from "@/components/home/ReviewCard";
+import { getGoogleReviews, treatwellSummary } from "@/lib/reviews";
 
-const REVIEWS = [
-  {
-    name: "Julie M.",
-    source: "Google",
-    rating: 5,
-    text: "Je ne peux plus me passer de Girls Beauty Gang ! Un vrai moment cocooning, des ongles magnifiques qui tiennent au moins 3 semaines. Les conseils sont personnalisés et on ressort toujours avec le sourire.",
-  },
-  {
-    name: "Sarah L.",
-    source: "Google",
-    rating: 5,
-    text: "Pose de cils impeccable, regard de biche garanti. Ambiance ultra sympa, je recommande à toutes mes copines. Le salon est propre et très bien situé.",
-  },
-  {
-    name: "Camille R.",
-    source: "Instagram",
-    rating: 5,
-    text: "Les taches de rousseurs semi-permanentes sont exactement ce que je voulais. Super naturel, tenue longue durée, je suis conquise !",
-  },
-  {
-    name: "Léa B.",
-    source: "Google",
-    rating: 5,
-    text: "Un vrai coup de cœur. Je suis hyper difficile avec mes ongles et je n'ai rien à redire, tout est parfait. Merci !",
-  },
-  {
-    name: "Manon D.",
-    source: "Google",
-    rating: 5,
-    text: "Accueil au top, prestation impeccable, et les prix sont honnêtes pour la qualité. Je recommande vivement, on se sent vraiment bien.",
-  },
-  {
-    name: "Inès K.",
-    source: "Instagram",
-    rating: 5,
-    text: "Rehaussement de cils magnifique, effet naturel, je me réveille déjà maquillée ! Un gain de temps énorme.",
-  },
-];
+const GOOGLE_REVIEWS_URL = "https://g.page/r/girlsbeautygang/review";
 
 export default async function ReviewsPage({
   params,
@@ -49,8 +14,17 @@ export default async function ReviewsPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const loc = locale as "fr" | "es";
   const t = await getTranslations("reviews");
   const tCommon = await getTranslations("nav");
+  const google = await getGoogleReviews(loc);
+
+  const totalRating = (
+    (google.rating * google.count +
+      treatwellSummary.rating * treatwellSummary.count) /
+    (google.count + treatwellSummary.count)
+  ).toFixed(1);
+  const totalCount = google.count + treatwellSummary.count;
 
   return (
     <>
@@ -58,53 +32,137 @@ export default async function ReviewsPage({
         <div className="flex items-center gap-2 text-primary-800">
           <div className="flex gap-0.5">
             {Array.from({ length: 5 }).map((_, i) => (
-              <Star
-                key={i}
-                size={18}
-                className="fill-accent text-accent"
-              />
+              <Star key={i} size={18} className="fill-accent text-accent" />
             ))}
           </div>
-          <span className="font-medium">4,9 / 5</span>
-          <span className="text-foreground/55">· 120+ avis</span>
+          <span className="font-medium">{totalRating} / 5</span>
+          <span className="text-foreground/55">
+            · {totalCount}+ {loc === "fr" ? "avis" : "reseñas"}
+          </span>
         </div>
       </PageHeader>
 
+      <section className="pb-12">
+        <div className="container-x grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+          <a
+            href={GOOGLE_REVIEWS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group rounded-2xl bg-white border border-muted p-6 hover:border-primary-300 transition-colors"
+          >
+            <div className="flex items-start justify-between mb-3">
+              <div className="text-xs uppercase tracking-widest text-primary-600">
+                Google
+              </div>
+              <ExternalLink
+                size={16}
+                className="text-primary-400 group-hover:text-primary-700 transition-colors"
+              />
+            </div>
+            <div className="flex items-baseline gap-2">
+              <span className="font-serif text-4xl text-primary-900">
+                {google.rating.toFixed(1)}
+              </span>
+              <div className="flex gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} size={14} className="fill-accent text-accent" />
+                ))}
+              </div>
+            </div>
+            <div className="mt-2 text-sm text-foreground/65">
+              {google.count} {loc === "fr" ? "avis vérifiés" : "reseñas verificadas"}
+            </div>
+          </a>
+
+          <a
+            href={treatwellSummary.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group rounded-2xl bg-white border border-muted p-6 hover:border-primary-300 transition-colors"
+          >
+            <div className="flex items-start justify-between mb-3">
+              <div className="text-xs uppercase tracking-widest text-primary-600">
+                Treatwell
+              </div>
+              <ExternalLink
+                size={16}
+                className="text-primary-400 group-hover:text-primary-700 transition-colors"
+              />
+            </div>
+            <div className="flex items-baseline gap-2">
+              <span className="font-serif text-4xl text-primary-900">
+                {treatwellSummary.rating.toFixed(1)}
+              </span>
+              <div className="flex gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} size={14} className="fill-accent text-accent" />
+                ))}
+              </div>
+            </div>
+            <div className="mt-2 text-sm text-foreground/65">
+              {treatwellSummary.count}{" "}
+              {loc === "fr" ? "avis vérifiés" : "reseñas verificadas"}
+            </div>
+          </a>
+        </div>
+      </section>
+
+      {google.reviews.length > 0 && (
+        <section className="pb-20">
+          <div className="container-x">
+            <h2 className="font-serif text-2xl text-primary-900 mb-6 text-center">
+              {loc === "fr" ? "Derniers avis Google" : "Últimas reseñas Google"}
+            </h2>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {google.reviews.map((review, i) => (
+                <ReviewCard
+                  key={i}
+                  review={review}
+                  index={i}
+                  variant="full"
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="pb-20">
         <div className="container-x">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {REVIEWS.map((review) => (
-              <blockquote
-                key={review.name}
-                className="rounded-2xl bg-white border border-muted p-6 shadow-sm"
-              >
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex gap-0.5">
-                    {Array.from({ length: review.rating }).map((_, k) => (
-                      <Star
-                        key={k}
-                        size={14}
-                        className="fill-accent text-accent"
-                      />
-                    ))}
-                  </div>
-                  <span className="text-[10px] uppercase tracking-wider text-primary-600/70">
-                    {review.source}
-                  </span>
+          <div className="rounded-2xl bg-white border border-muted overflow-hidden shadow-sm">
+            <div className="flex items-center justify-between border-b border-muted p-4">
+              <div>
+                <div className="text-xs uppercase tracking-widest text-primary-600 mb-1">
+                  Treatwell
                 </div>
-                <p className="text-sm text-foreground/75 leading-relaxed italic">
-                  « {review.text} »
-                </p>
-                <footer className="mt-4 text-xs font-medium text-primary-700">
-                  — {review.name}
-                </footer>
-              </blockquote>
-            ))}
+                <div className="font-serif text-primary-900">
+                  {loc === "fr"
+                    ? "Tous les avis et la réservation"
+                    : "Todas las reseñas y la reserva"}
+                </div>
+              </div>
+              <a
+                href={treatwellSummary.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ghost text-xs"
+              >
+                {loc === "fr" ? "Ouvrir" : "Abrir"}
+                <ExternalLink size={12} />
+              </a>
+            </div>
+            <iframe
+              src={treatwellSummary.url}
+              title="Treatwell — Girls Beauty Gang"
+              className="w-full border-0"
+              style={{ height: "620px" }}
+              loading="lazy"
+            />
           </div>
 
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://www.google.com/search?q=girls+beauty+gang+saint-maur"
+              href={GOOGLE_REVIEWS_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"
