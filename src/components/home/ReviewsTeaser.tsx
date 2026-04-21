@@ -1,14 +1,16 @@
 import { getTranslations, getLocale } from "next-intl/server";
 import { Star } from "lucide-react";
-import { getGoogleReviews, treatwellSummary } from "@/lib/reviews";
+import {
+  getFeaturedReviews,
+  googleSummary,
+  treatwellSummary,
+} from "@/data/reviews";
 import ReviewCard from "./ReviewCard";
-
-const GOOGLE_REVIEWS_URL = "https://g.page/r/girlsbeautygang/review";
 
 export default async function ReviewsTeaser() {
   const t = await getTranslations("home");
   const locale = (await getLocale()) as "fr" | "es";
-  const google = await getGoogleReviews(locale);
+  const reviews = getFeaturedReviews(3);
 
   return (
     <section className="py-20 sm:py-28 bg-primary-50/40">
@@ -26,17 +28,18 @@ export default async function ReviewsTeaser() {
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
-              href={GOOGLE_REVIEWS_URL}
+              href={googleSummary.url}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-white border border-muted px-4 py-2 text-sm hover:border-primary-300 transition-colors"
             >
               <span className="font-semibold text-primary-800">
-                {google.rating.toFixed(1)}
+                {googleSummary.rating.toFixed(1)}
               </span>
               <Star size={14} className="fill-accent text-accent" />
               <span className="text-foreground/70">
-                {google.count} {locale === "fr" ? "avis Google" : "reseñas Google"}
+                {googleSummary.count}{" "}
+                {locale === "fr" ? "avis Google" : "reseñas Google"}
               </span>
             </a>
             <a
@@ -50,19 +53,22 @@ export default async function ReviewsTeaser() {
               </span>
               <Star size={14} className="fill-accent text-accent" />
               <span className="text-foreground/70">
-                {treatwellSummary.count} {locale === "fr" ? "avis Treatwell" : "reseñas Treatwell"}
+                {treatwellSummary.count}{" "}
+                {locale === "fr" ? "avis Treatwell" : "reseñas Treatwell"}
               </span>
             </a>
           </div>
         </div>
 
-        {google.reviews.length > 0 && (
-          <div className="grid md:grid-cols-3 gap-4 mt-6">
-            {google.reviews.slice(0, 3).map((review, i) => (
-              <ReviewCard key={i} review={review} index={i} />
-            ))}
-          </div>
-        )}
+        <div className="grid md:grid-cols-3 gap-4 mt-6">
+          {reviews.map((review, i) => (
+            <ReviewCard
+              key={`${review.author}-${i}`}
+              review={review}
+              index={i}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

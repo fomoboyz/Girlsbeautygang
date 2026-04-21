@@ -3,9 +3,11 @@ import { Star, ExternalLink } from "lucide-react";
 import PageHeader from "@/components/ui/PageHeader";
 import BookButton from "@/components/ui/BookButton";
 import ReviewCard from "@/components/home/ReviewCard";
-import { getGoogleReviews, treatwellSummary } from "@/lib/reviews";
-
-const GOOGLE_REVIEWS_URL = "https://g.page/r/girlsbeautygang/review";
+import {
+  reviews,
+  googleSummary,
+  treatwellSummary,
+} from "@/data/reviews";
 
 export default async function ReviewsPage({
   params,
@@ -17,14 +19,12 @@ export default async function ReviewsPage({
   const loc = locale as "fr" | "es";
   const t = await getTranslations("reviews");
   const tCommon = await getTranslations("nav");
-  const google = await getGoogleReviews(loc);
-
   const totalRating = (
-    (google.rating * google.count +
+    (googleSummary.rating * googleSummary.count +
       treatwellSummary.rating * treatwellSummary.count) /
-    (google.count + treatwellSummary.count)
+    (googleSummary.count + treatwellSummary.count)
   ).toFixed(1);
-  const totalCount = google.count + treatwellSummary.count;
+  const totalCount = googleSummary.count + treatwellSummary.count;
 
   return (
     <>
@@ -37,7 +37,7 @@ export default async function ReviewsPage({
           </div>
           <span className="font-medium">{totalRating} / 5</span>
           <span className="text-foreground/55">
-            · {totalCount}+ {loc === "fr" ? "avis" : "reseñas"}
+            · {totalCount} {loc === "fr" ? "avis" : "reseñas"}
           </span>
         </div>
       </PageHeader>
@@ -45,7 +45,7 @@ export default async function ReviewsPage({
       <section className="pb-12">
         <div className="container-x grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
           <a
-            href={GOOGLE_REVIEWS_URL}
+            href={googleSummary.url}
             target="_blank"
             rel="noopener noreferrer"
             className="group rounded-2xl bg-white border border-muted p-6 hover:border-primary-300 transition-colors"
@@ -61,7 +61,7 @@ export default async function ReviewsPage({
             </div>
             <div className="flex items-baseline gap-2">
               <span className="font-serif text-4xl text-primary-900">
-                {google.rating.toFixed(1)}
+                {googleSummary.rating.toFixed(1)}
               </span>
               <div className="flex gap-0.5">
                 {Array.from({ length: 5 }).map((_, i) => (
@@ -70,7 +70,8 @@ export default async function ReviewsPage({
               </div>
             </div>
             <div className="mt-2 text-sm text-foreground/65">
-              {google.count} {loc === "fr" ? "avis vérifiés" : "reseñas verificadas"}
+              {googleSummary.count}{" "}
+              {loc === "fr" ? "avis vérifiés" : "reseñas verificadas"}
             </div>
           </a>
 
@@ -107,29 +108,20 @@ export default async function ReviewsPage({
         </div>
       </section>
 
-      {google.reviews.length > 0 && (
-        <section className="pb-20">
-          <div className="container-x">
-            <h2 className="font-serif text-2xl text-primary-900 mb-6 text-center">
-              {loc === "fr" ? "Derniers avis Google" : "Últimas reseñas Google"}
-            </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {google.reviews.map((review, i) => (
-                <ReviewCard
-                  key={i}
-                  review={review}
-                  index={i}
-                  variant="full"
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
       <section className="pb-20">
         <div className="container-x">
-          <div className="rounded-2xl bg-white border border-muted overflow-hidden shadow-sm">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {reviews.map((review, i) => (
+              <ReviewCard
+                key={`${review.author}-${i}`}
+                review={review}
+                index={i}
+                variant="full"
+              />
+            ))}
+          </div>
+
+          <div className="mt-12 rounded-2xl bg-white border border-muted overflow-hidden shadow-sm">
             <div className="flex items-center justify-between border-b border-muted p-4">
               <div>
                 <div className="text-xs uppercase tracking-widest text-primary-600 mb-1">
@@ -137,8 +129,8 @@ export default async function ReviewsPage({
                 </div>
                 <div className="font-serif text-primary-900">
                   {loc === "fr"
-                    ? "Tous les avis et la réservation"
-                    : "Todas las reseñas y la reserva"}
+                    ? "Tous les avis vérifiés Treatwell"
+                    : "Todas las reseñas verificadas Treatwell"}
                 </div>
               </div>
               <a
@@ -162,7 +154,7 @@ export default async function ReviewsPage({
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href={GOOGLE_REVIEWS_URL}
+              href={googleSummary.url}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"

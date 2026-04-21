@@ -2,14 +2,14 @@
 
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
-import type { GoogleReview } from "@/lib/reviews";
+import type { StaticReview } from "@/data/reviews";
 
 export default function ReviewCard({
   review,
   index = 0,
   variant = "compact",
 }: {
-  review: GoogleReview;
+  review: StaticReview;
   index?: number;
   variant?: "compact" | "full";
 }) {
@@ -21,10 +21,15 @@ export default function ReviewCard({
       transition={{ duration: 0.5, delay: (index % 3) * 0.08 }}
       className="rounded-2xl bg-white border border-muted p-6 shadow-sm flex flex-col"
     >
-      <div className="flex gap-0.5 mb-3">
-        {Array.from({ length: review.rating }).map((_, k) => (
-          <Star key={k} size={14} className="fill-accent text-accent" />
-        ))}
+      <div className="flex items-center justify-between mb-3">
+        <div className="flex gap-0.5">
+          {Array.from({ length: review.rating }).map((_, k) => (
+            <Star key={k} size={14} className="fill-accent text-accent" />
+          ))}
+        </div>
+        <span className="text-[10px] uppercase tracking-wider text-primary-600/70">
+          {review.source}
+        </span>
       </div>
       <p
         className={`text-sm text-foreground/75 leading-relaxed italic ${
@@ -35,8 +40,8 @@ export default function ReviewCard({
       </p>
       <footer className="mt-4 flex items-center justify-between text-xs">
         <span className="font-medium text-primary-700">— {review.author}</span>
-        {review.relativeTime && (
-          <span className="text-foreground/45">{review.relativeTime}</span>
+        {review.date && (
+          <span className="text-foreground/45">{review.date}</span>
         )}
       </footer>
     </motion.blockquote>
