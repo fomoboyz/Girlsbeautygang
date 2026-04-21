@@ -2,6 +2,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Mail, MapPin } from "lucide-react";
 import InstagramIcon from "@/components/ui/InstagramIcon";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 
 const NAV_LINKS = [
   { href: "/services", key: "services" },
@@ -27,6 +28,15 @@ export default async function Footer() {
             {t("footer.tagline")}
           </p>
           <div className="mt-6 flex items-center gap-3">
+            <a
+              href="https://wa.me/33682343467"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="rounded-full p-2.5 bg-white border border-muted hover:border-primary-300 hover:text-primary-700 transition-colors"
+            >
+              <WhatsAppIcon size={18} />
+            </a>
             <a
               href="https://instagram.com/girlsbeautygang"
               target="_blank"

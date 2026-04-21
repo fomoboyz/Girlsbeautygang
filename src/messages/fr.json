@@ -134,7 +134,8 @@
     "location": "Adresse",
     "locationText": "Saint-Maur-des-Fossés · déplacement possible à Chennevières, Créteil et alentours (groupes 3+).",
     "hours": "Horaires",
-    "hoursText": "Lun — Sam : 9h — 19h\nDim : sur rendez-vous"
+    "hoursText": "Mardi — Samedi : 10h — 19h\nDimanche & Lundi : fermé",
+    "whatsapp": "WhatsApp"
   },
   "booking": {
     "modalTitle": "Réserver un rendez-vous",

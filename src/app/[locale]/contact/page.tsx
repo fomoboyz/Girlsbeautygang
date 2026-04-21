@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Mail, MapPin, Clock } from "lucide-react";
 import InstagramIcon from "@/components/ui/InstagramIcon";
+import WhatsAppIcon from "@/components/ui/WhatsAppIcon";
 import PageHeader from "@/components/ui/PageHeader";
 import BookButton from "@/components/ui/BookButton";
 
@@ -15,6 +16,12 @@ export default async function ContactPage({
   const tNav = await getTranslations("nav");
 
   const cards = [
+    {
+      Icon: WhatsAppIcon,
+      label: t("whatsapp"),
+      value: "+33 6 82 34 34 67",
+      href: "https://wa.me/33682343467",
+    },
     {
       Icon: InstagramIcon,
       label: t("instagram"),

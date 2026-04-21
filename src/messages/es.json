@@ -134,7 +134,8 @@
     "location": "Dirección",
     "locationText": "Saint-Maur-des-Fossés · desplazamiento posible a Chennevières, Créteil y alrededores (grupos 3+).",
     "hours": "Horarios",
-    "hoursText": "Lun — Sáb: 9h — 19h\nDom: con cita"
+    "hoursText": "Martes — Sábado: 10h — 19h\nDomingo y lunes: cerrado",
+    "whatsapp": "WhatsApp"
   },
   "booking": {
     "modalTitle": "Reservar una cita",

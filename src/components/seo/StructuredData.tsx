@@ -7,7 +7,7 @@ export default function StructuredData() {
     name: "Girls Beauty Gang",
     image: `${SITE_URL}/og.jpg`,
     url: SITE_URL,
-    telephone: "",
+    telephone: "+33682343467",
     email: "contact@girlsbeautygang.fr",
     priceRange: "€€",
     address: {
@@ -22,14 +22,13 @@ export default function StructuredData() {
       {
         "@type": "OpeningHoursSpecification",
         dayOfWeek: [
-          "Monday",
           "Tuesday",
           "Wednesday",
           "Thursday",
           "Friday",
           "Saturday",
         ],
-        opens: "09:00",
+        opens: "10:00",
         closes: "19:00",
       },
     ],
