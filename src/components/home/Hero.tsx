@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import BookButton from "@/components/ui/BookButton";
 import { ArrowRight, Star, Users, Clock } from "lucide-react";
@@ -93,16 +94,38 @@ export default function Hero() {
         >
           <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden bg-gradient-to-br from-primary-100 via-beige to-nude shadow-2xl shadow-primary-500/10">
             <div className="absolute inset-0 grid grid-cols-2 gap-2 p-3">
-              <div className="rounded-[1.5rem] bg-primary-200/60 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.6),transparent_70%)]" />
+              <div className="rounded-[1.5rem] overflow-hidden relative bg-primary-100">
+                <Image
+                  src="/gallery/01.jpg"
+                  alt="Baby boomer nude avec fleur 3D"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover"
+                />
               </div>
-              <div className="rounded-[1.5rem] bg-accent/50 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(255,255,255,0.6),transparent_70%)]" />
+              <div className="rounded-[1.5rem] overflow-hidden relative bg-primary-100">
+                <Image
+                  src="/gallery/04.jpg"
+                  alt="Nude rosé avec fleur 3D blanche"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                  className="object-cover"
+                />
               </div>
-              <div className="rounded-[1.5rem] bg-primary-300/50 col-span-2 relative overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.5),transparent_70%)]" />
-                <div className="absolute bottom-4 left-5 right-5 text-primary-900/80">
-                  <div className="font-serif text-xl">
+              <div className="rounded-[1.5rem] overflow-hidden relative col-span-2 bg-primary-200">
+                <Image
+                  src="/gallery/02.jpg"
+                  alt="Nail art multicolore avec étoiles dorées"
+                  fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-5 right-5 text-white">
+                  <div className="font-serif text-xl drop-shadow">
                     Nail art &amp; semi-permanent
                   </div>
                 </div>
