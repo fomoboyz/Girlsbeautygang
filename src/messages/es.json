@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "title": "Girls Beauty Gang — Uñas, pestañas y maquillaje semipermanente",
+    "description": "Salón de belleza en Saint-Maur. Uñas, extensiones de pestañas, maquillaje semipermanente. Reserva online en segundos.",
+    "keywords": "uñas, manicura, extensiones de pestañas, nail art, Saint-Maur, salón de belleza"
+  },
+  "nav": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "gallery": "Galería",
+    "reviews": "Reseñas",
+    "about": "Sobre mí",
+    "group": "Sesiones en grupo",
+    "contact": "Contacto",
+    "book": "Reservar",
+    "bookNow": "Reservar una cita"
+  },
+  "home": {
+    "heroEyebrow": "Estudio de belleza — Saint-Maur",
+    "heroTitle": "Una belleza sutil,\nun cuidado a medida.",
+    "heroSubtitle": "Uñas, pestañas y maquillaje semipermanente. Reserva online y disfruta de un ambiente cálido y acogedor.",
+    "heroCta": "Reservar ahora",
+    "heroCtaSecondary": "Ver los servicios",
+    "trustBadges": {
+      "rating": "4,9 / 5 en Google",
+      "clients": "500+ clientas",
+      "booking": "Reserva en 30s"
+    },
+    "servicesTitle": "Nuestros servicios",
+    "servicesSubtitle": "Un universo completo en torno a manos, pestañas y maquillaje semipermanente.",
+    "servicesCta": "Ver todos los servicios",
+    "whyTitle": "Por qué Girls Beauty Gang",
+    "whyItems": {
+      "quality": {
+        "title": "Calidad profesional",
+        "text": "Técnicas dominadas y productos premium para un resultado que dura."
+      },
+      "cozy": {
+        "title": "Ambiente acogedor",
+        "text": "Un espacio cálido donde nos tomamos el tiempo para cuidarte."
+      },
+      "hygiene": {
+        "title": "Higiene irreprochable",
+        "text": "Material esterilizado y de un solo uso para cada clienta."
+      },
+      "easy": {
+        "title": "Reserva sencilla",
+        "text": "Elige tu hora online, confirmación instantánea."
+      }
+    },
+    "galleryTitle": "Nuestras últimas creaciones",
+    "galleryCta": "Ver la galería",
+    "reviewsTitle": "Nos han confiado",
+    "reviewsSubtitle": "Reseñas verificadas de nuestras clientas",
+    "groupTitle": "¿Un momento belleza entre amigas?",
+    "groupSubtitle": "Desplazamiento disponible para grupos de 3 personas mínimo. Despedidas, cumpleaños, baby shower...",
+    "groupCta": "Contactar para un grupo"
+  },
+  "services": {
+    "title": "Nuestros servicios",
+    "subtitle": "Tarifas y duraciones indicativas — elige tu servicio y reserva online.",
+    "filterAll": "Ver todo",
+    "from": "Desde",
+    "duration": "Duración",
+    "bookThis": "Reservar este servicio",
+    "backToCatalog": "Volver al catálogo",
+    "variantsTitle": "Opciones disponibles",
+    "detailPriceNote": "Tarifas IVA incluido. Recibirás una confirmación por Treatwell tras la reserva."
+  },
+  "gallery": {
+    "title": "Galería",
+    "subtitle": "Un vistazo a mis últimas creaciones. Sígueme en Instagram para no perderte nada.",
+    "followCta": "Seguir en Instagram"
+  },
+  "reviews": {
+    "title": "Reseñas de clientas",
+    "subtitle": "Reseñas verificadas compartidas en Google e Instagram.",
+    "googleCta": "Ver todas las reseñas de Google"
+  },
+  "about": {
+    "title": "Bienvenida a Girls Beauty Gang",
+    "intro": "Soy la fundadora de Girls Beauty Gang, salón de belleza en Saint-Maur. Apasionada por la estética desde siempre, he convertido esta profesión en mi vocación: realzar la belleza de cada mujer con delicadeza, en un ambiente cálido y acogedor.",
+    "valuesTitle": "Mis compromisos",
+    "values": {
+      "tailored": {
+        "title": "A medida",
+        "text": "Cada servicio se adapta a tu morfología y a tus deseos."
+      },
+      "premium": {
+        "title": "Productos premium",
+        "text": "Trabajo con marcas profesionales reconocidas."
+      },
+      "listening": {
+        "title": "Escucha activa",
+        "text": "Un tiempo real de intercambio antes de cada servicio para entender tus expectativas."
+      }
+    }
+  },
+  "group": {
+    "title": "Servicios en grupo",
+    "subtitle": "Me desplazo a tu domicilio para grupos de 3 personas mínimo.",
+    "occasionsTitle": "¿Para qué ocasiones?",
+    "occasions": [
+      "Despedida de soltera",
+      "Cumpleaños entre amigas",
+      "Baby shower",
+      "Team building beauty",
+      "Antes de una boda"
+    ],
+    "howItWorks": "Cómo funciona",
+    "steps": [
+      "Me contactas con la fecha deseada y el número de participantes",
+      "Hablamos de los servicios y te envío un presupuesto",
+      "Me desplazo a la dirección elegida con todo el material"
+    ],
+    "formTitle": "Solicitar un presupuesto de grupo",
+    "form": {
+      "name": "Tu nombre",
+      "email": "Email",
+      "phone": "Teléfono",
+      "date": "Fecha deseada",
+      "people": "Número de participantes",
+      "message": "Servicios deseados / detalles",
+      "submit": "Enviar solicitud",
+      "success": "Solicitud enviada, te responderé enseguida.",
+      "error": "Ha ocurrido un error. Por favor, inténtalo de nuevo o escríbeme por Instagram."
+    }
+  },
+  "contact": {
+    "title": "Contactar",
+    "subtitle": "¿Una pregunta? ¿Una solicitud específica? Respondo en menos de 24h.",
+    "instagram": "Instagram",
+    "email": "Email",
+    "location": "Dirección",
+    "locationText": "Saint-Maur-des-Fossés · desplazamiento posible a Chennevières, Créteil y alrededores (grupos 3+).",
+    "hours": "Horarios",
+    "hoursText": "Lun — Sáb: 9h — 19h\nDom: con cita"
+  },
+  "booking": {
+    "modalTitle": "Reservar una cita",
+    "modalSubtitle": "Elige tu servicio y tu hora vía Treatwell.",
+    "close": "Cerrar",
+    "loading": "Cargando el módulo de reserva..."
+  },
+  "footer": {
+    "tagline": "Salón de belleza en Saint-Maur.\nUñas, pestañas y maquillaje semipermanente.",
+    "navTitle": "Navegación",
+    "legalTitle": "Información",
+    "legal": "Aviso legal",
+    "privacy": "Privacidad",
+    "rights": "Todos los derechos reservados.",
+    "madeWith": "Hecho con cariño en Saint-Maur."
+  },
+  "common": {
+    "book": "Reservar",
+    "learnMore": "Saber más",
+    "language": "Idioma"
+  }
+}

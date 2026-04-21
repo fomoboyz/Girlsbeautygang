@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "title": "Girls Beauty Gang — Ongles, cils & maquillage semi-permanent",
+    "description": "Institut beauté à Saint-Maur. Ongles, extensions de cils, maquillage semi-permanent. Réservez en ligne en quelques secondes.",
+    "keywords": "ongles, manucure, extensions de cils, nail art, Saint-Maur, Chennevières, institut beauté"
+  },
+  "nav": {
+    "home": "Accueil",
+    "services": "Prestations",
+    "gallery": "Galerie",
+    "reviews": "Avis",
+    "about": "À propos",
+    "group": "Prestation en groupe",
+    "contact": "Contact",
+    "book": "Réserver",
+    "bookNow": "Réserver un rendez-vous"
+  },
+  "home": {
+    "heroEyebrow": "Studio beauté — Saint-Maur",
+    "heroTitle": "Une beauté subtile,\nun soin sur-mesure.",
+    "heroSubtitle": "Ongles, cils et maquillage semi-permanent. Prenez rendez-vous en ligne, soyez reçue dans un cadre cosy et chaleureux.",
+    "heroCta": "Réserver maintenant",
+    "heroCtaSecondary": "Voir les prestations",
+    "trustBadges": {
+      "rating": "4,9 / 5 sur Google",
+      "clients": "500+ clientes",
+      "booking": "Réservation en 30s"
+    },
+    "servicesTitle": "Nos prestations",
+    "servicesSubtitle": "Un univers complet autour des mains, des cils, et du maquillage semi-permanent.",
+    "servicesCta": "Voir tout le catalogue",
+    "whyTitle": "Pourquoi Girls Beauty Gang",
+    "whyItems": {
+      "quality": {
+        "title": "Qualité professionnelle",
+        "text": "Techniques maîtrisées et produits premium pour un résultat qui dure."
+      },
+      "cozy": {
+        "title": "Ambiance cosy",
+        "text": "Un espace chaleureux où l'on prend le temps de vous chouchouter."
+      },
+      "hygiene": {
+        "title": "Hygiène irréprochable",
+        "text": "Matériel stérilisé et usage unique pour chaque cliente."
+      },
+      "easy": {
+        "title": "Réservation simple",
+        "text": "Choisissez votre créneau en ligne, confirmation instantanée."
+      }
+    },
+    "galleryTitle": "Nos dernières créations",
+    "galleryCta": "Voir la galerie",
+    "reviewsTitle": "Elles nous ont fait confiance",
+    "reviewsSubtitle": "Avis vérifiés de nos clientes",
+    "groupTitle": "Un moment beauté entre copines ?",
+    "groupSubtitle": "Déplacement possible pour tout groupe de 3 personnes minimum. EVJF, anniversaire, baby shower…",
+    "groupCta": "Nous contacter pour un groupe"
+  },
+  "services": {
+    "title": "Nos prestations",
+    "subtitle": "Tarifs et durées indicatifs — choisissez votre prestation et réservez en ligne.",
+    "filterAll": "Tout voir",
+    "from": "À partir de",
+    "duration": "Durée",
+    "bookThis": "Réserver cette prestation",
+    "backToCatalog": "Retour au catalogue",
+    "variantsTitle": "Options disponibles",
+    "detailPriceNote": "Les tarifs sont indiqués TTC. Une confirmation vous sera envoyée via Treatwell après réservation."
+  },
+  "gallery": {
+    "title": "Galerie",
+    "subtitle": "Un aperçu de mes dernières réalisations. Suivez-moi sur Instagram pour ne rien manquer.",
+    "followCta": "Me suivre sur Instagram"
+  },
+  "reviews": {
+    "title": "Avis clientes",
+    "subtitle": "Des avis vérifiés, partagés sur Google et Instagram.",
+    "googleCta": "Voir tous les avis Google"
+  },
+  "about": {
+    "title": "Bienvenue chez Girls Beauty Gang",
+    "intro": "Je suis la fondatrice de Girls Beauty Gang, institut beauté installé à Saint-Maur. Passionnée par l'univers de l'esthétique depuis toujours, j'ai fait de ce métier ma vocation : sublimer chaque femme avec délicatesse, dans un cadre chaleureux et bienveillant.",
+    "valuesTitle": "Mes engagements",
+    "values": {
+      "tailored": {
+        "title": "Sur-mesure",
+        "text": "Chaque prestation est adaptée à votre morphologie et à vos envies."
+      },
+      "premium": {
+        "title": "Produits premium",
+        "text": "Je travaille avec des marques professionnelles reconnues."
+      },
+      "listening": {
+        "title": "À l'écoute",
+        "text": "Un vrai temps d'échange avant chaque prestation pour comprendre vos attentes."
+      }
+    }
+  },
+  "group": {
+    "title": "Prestations en groupe",
+    "subtitle": "Je me déplace à votre domicile pour les groupes de 3 personnes minimum.",
+    "occasionsTitle": "Pour quelles occasions ?",
+    "occasions": [
+      "Enterrement de vie de jeune fille",
+      "Anniversaire entre copines",
+      "Baby shower",
+      "Team building beauté",
+      "Avant un mariage"
+    ],
+    "howItWorks": "Comment ça marche",
+    "steps": [
+      "Vous me contactez avec la date souhaitée et le nombre de participantes",
+      "Nous échangeons sur les prestations et un devis vous est envoyé",
+      "Je me déplace à l'adresse de votre choix avec tout le matériel"
+    ],
+    "formTitle": "Demander un devis de groupe",
+    "form": {
+      "name": "Votre nom",
+      "email": "Email",
+      "phone": "Téléphone",
+      "date": "Date souhaitée",
+      "people": "Nombre de participantes",
+      "message": "Prestations souhaitées / précisions",
+      "submit": "Envoyer la demande",
+      "success": "Votre demande a été envoyée, je reviens vers vous rapidement.",
+      "error": "Une erreur est survenue. Merci de réessayer ou de m'écrire sur Instagram."
+    }
+  },
+  "contact": {
+    "title": "Me contacter",
+    "subtitle": "Une question ? Une demande spécifique ? Je vous réponds sous 24h.",
+    "instagram": "Instagram",
+    "email": "Email",
+    "location": "Adresse",
+    "locationText": "Saint-Maur-des-Fossés · déplacement possible à Chennevières, Créteil et alentours (groupes 3+).",
+    "hours": "Horaires",
+    "hoursText": "Lun — Sam : 9h — 19h\nDim : sur rendez-vous"
+  },
+  "booking": {
+    "modalTitle": "Réserver un rendez-vous",
+    "modalSubtitle": "Choisissez votre prestation et votre créneau via Treatwell.",
+    "close": "Fermer",
+    "loading": "Chargement du module de réservation..."
+  },
+  "footer": {
+    "tagline": "Institut beauté à Saint-Maur.\nOngles, cils & maquillage semi-permanent.",
+    "navTitle": "Navigation",
+    "legalTitle": "Informations",
+    "legal": "Mentions légales",
+    "privacy": "Confidentialité",
+    "rights": "Tous droits réservés.",
+    "madeWith": "Fait avec soin à Saint-Maur."
+  },
+  "common": {
+    "book": "Réserver",
+    "learnMore": "En savoir plus",
+    "language": "Langue"
+  }
+}
